@@ -7,12 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import id.sch.smktelkom_mlg.privateassignment.xirpl634.popularmovie.R;
-
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Section2Fragment extends Fragment {
+public class Section2Fragment extends Fragment{
 
 
 	public Section2Fragment() {
@@ -24,7 +22,9 @@ public class Section2Fragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	                         Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
-		return inflater.inflate(R.layout.fragment_section2, container, false);
+		View myView = inflater.inflate(R.layout.fragment_section2, container, false);
+
+		return myView;
 	}
 
 }

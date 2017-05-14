@@ -1,51 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  xmlns:tools="http://schemas.android.com/tools"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_marginBottom="2dp"
-                  android:layout_marginTop="2dp"
-                  android:background="#88424242"
-                  android:foreground="?android:attr/selectableItemBackground"
-                  android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".Section2Fragment">
 
-        <ImageView
-            android:id="@+id/imageViewArticle"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
+    <!-- TODO: Update blank fragment layout -->
 
-        <TextView
-            android:id="@+id/textViewTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:gravity="center"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            tools:text="Judul" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:layout_weight="1"
+        android:text="XI RPL 6 /34"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"/>
 
-        <TextView
-            android:id="@+id/textViewDesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-            tools:text="Desc" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77dp"
+        android:layout_weight="1"
+        android:text="SESHAR JOSES WICAKSONO"
+        />
 
-        <TextView
-            android:id="@+id/textViewDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            tools:text="Date"/>
-
-    </LinearLayout>
-</ScrollView>
+</RelativeLayout>

@@ -12,8 +12,9 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import id.sch.smktelkom_mlg.learn.clientserver1.R;
-import id.sch.smktelkom_mlg.learn.clientserver1.model.Source;
+import id.sch.smktelkom_mlg.privateassignment.xirpl634.popularmovie.R;
+import id.sch.smktelkom_mlg.privateassignment.xirpl634.popularmovie.Section1Fragment;
+import id.sch.smktelkom_mlg.privateassignment.xirpl634.popularmovie.model.Source;
 
 /**
  * Created by hyuam on 12/10/2016.
@@ -23,15 +24,16 @@ public class SourceAdapter extends RecyclerView.Adapter<SourceAdapter.ViewHolder
 {
     ArrayList<Source> list;
     ISourceAdapter mISourceAdapter;
-    Context context;
+    Section1Fragment context;
     
-    public SourceAdapter(Context context, ArrayList<Source> list)
+    public SourceAdapter(Section1Fragment context, ArrayList<Source> list)
     {
         this.list = list;
         this.context = context;
         mISourceAdapter = (ISourceAdapter) context;
     }
-    
+
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
