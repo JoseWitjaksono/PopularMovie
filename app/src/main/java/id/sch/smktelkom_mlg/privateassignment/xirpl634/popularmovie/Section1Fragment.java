@@ -48,7 +48,7 @@ public class Section1Fragment extends Fragment implements SourceAdapter.ISourceA
 		RecyclerView recyclerView = (RecyclerView) myView.findViewById(R.id.recyclerView);
 		StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
 		recyclerView.setLayoutManager(layoutManager);
-		mAdapter = new SourceAdapter(this, mList);
+		mAdapter = new SourceAdapter(getContext(),this, mList);
 		recyclerView.setAdapter(mAdapter);
 		downloadDataSources();
 

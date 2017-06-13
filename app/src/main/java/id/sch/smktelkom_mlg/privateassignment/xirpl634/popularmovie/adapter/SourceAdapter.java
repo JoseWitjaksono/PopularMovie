@@ -1,17 +1,21 @@
 package id.sch.smktelkom_mlg.privateassignment.xirpl634.popularmovie.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import id.sch.smktelkom_mlg.privateassignment.xirpl634.popularmovie.DatabaseHelper;
 import id.sch.smktelkom_mlg.privateassignment.xirpl634.popularmovie.R;
 import id.sch.smktelkom_mlg.privateassignment.xirpl634.popularmovie.Section1Fragment;
 import id.sch.smktelkom_mlg.privateassignment.xirpl634.popularmovie.model.Source;
@@ -25,11 +29,13 @@ public class SourceAdapter extends RecyclerView.Adapter<SourceAdapter.ViewHolder
     ArrayList<Source> list;
     ISourceAdapter mISourceAdapter;
     Section1Fragment context;
+    Context ctx;
     
-    public SourceAdapter(Section1Fragment context, ArrayList<Source> list)
+    public SourceAdapter(Context ctx,Section1Fragment context, ArrayList<Source> list)
     {
         this.list = list;
         this.context = context;
+        this.ctx = ctx;
         mISourceAdapter = (ISourceAdapter) context;
     }
 
@@ -44,9 +50,9 @@ public class SourceAdapter extends RecyclerView.Adapter<SourceAdapter.ViewHolder
     }
     
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position)
+    public void onBindViewHolder(final ViewHolder holder, final int position)
     {
-        Source source = list.get(position);
+        final Source source = list.get(position);
         String iurl = "http://image.tmdb.org/t/p/w500/"+source.backdrop_path;
         holder.tvName.setText(source.title);
         holder.tvDesc.setText(source.overview);
@@ -90,6 +96,12 @@ public class SourceAdapter extends RecyclerView.Adapter<SourceAdapter.ViewHolder
                 public void onClick(View v)
                 {
                     Source source = list.get(getAdapterPosition());
+                    String title = source.title;
+                    String desc = source.overview;
+                    DatabaseHelper db = new DatabaseHelper(ctx);
+                    if (db.insertLocal(title, desc)) {
+                        Toast.makeText(ctx, "Berhasil menyimpan", Toast.LENGTH_SHORT).show();
+                    }
                     mISourceAdapter.showArticles(source.id, source.title);
                 }
             });
